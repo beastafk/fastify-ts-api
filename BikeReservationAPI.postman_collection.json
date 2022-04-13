@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "4b52ce7e-ecba-4dc8-8670-97805028b633",
+		"name": "BikeReservationAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET all free bikes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4001/api/bikes/reserve?city=Sofia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"bikes",
+						"reserve"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Sofia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST create new reservation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"a49cd437-c649-43bb-b2e5-e57c29c8cd3a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/bikes/reserve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"bikes",
+						"reserve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET existing reservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"a49cd437-c649-43bb-b2e5-e57c29c8cd3a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/bikes/reserve/c649-43bb-b2e5-e57c29c8cd3a-dsa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"bikes",
+						"reserve",
+						"c649-43bb-b2e5-e57c29c8cd3a-dsa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update an existing reservation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"a49cd437-c649-43bb-b2e5-e57c29c8cd3a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/bikes/reserve/c649-43bb-b2e5-e57c29c8cd3a-dsa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"bikes",
+						"reserve",
+						"c649-43bb-b2e5-e57c29c8cd3a-dsa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "an existing reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"a49cd437-c649-43bb-b2e5-e57c29c8cd3a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/bikes/reserve/c649-43bb-b2e5-e57c29c8cd3a-dsa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"bikes",
+						"reserve",
+						"c649-43bb-b2e5-e57c29c8cd3a-dsa"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

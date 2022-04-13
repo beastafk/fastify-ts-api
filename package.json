@@ -1,0 +1,24 @@
+{
+  "name": "fastify-ts-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc -p .",
+    "dev:server": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.27.4",
+    "fastify-response-validation": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "fastify-swagger": "^5.1.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}

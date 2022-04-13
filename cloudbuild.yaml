@@ -1,0 +1,35 @@
+steps:
+  # Build the container fastify-ts-api
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "eu.gcr.io/$PROJECT_ID/fastify-ts-api",
+        "--cache-from",
+        "gcr.io/$PROJECT_ID/fastify-ts-api:latest",
+        ".",
+      ]
+
+  # Push the container fastify-ts-api to Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "eu.gcr.io/$PROJECT_ID/fastify-ts-api"]
+
+  # Deploy container fastify-ts-api to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      [
+        "run",
+        "deploy",
+        "fastify-ts-api",
+        "--image",
+        "eu.gcr.io/$PROJECT_ID/fastify-ts-api",
+        "--region",
+        "europe-west1",
+        "--allow-unauthenticated",
+        "--port",
+        "8080",
+      ]
+images:
+  - eu.gcr.io/$PROJECT_ID/fastify-ts-api
